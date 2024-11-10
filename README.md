@@ -15,19 +15,22 @@ A responsive Netflix Clone built with **ReactJS**. This project replicates the N
   Contains preloaded images, icons, and data for a seamless user experience.
 
 ## **Project Structure**
-├── public/                # Static assets (banners, favicons)
-├── src/
-│   ├── assets/            # Icons, images, and reusable data
-│   ├── components/        # Reusable UI components (Navbar, Footer, etc.)
-│   ├── pages/             # App pages (Home, Login, Player)
-│   ├── App.jsx            # Main application file
-│   ├── main.jsx           # Entry point for the app
-│   └── App.css            # Global styling
-├── package.json           # Project dependencies and scripts
-├── vite.config.js         # Vite configuration
-├── .gitignore             # Files to exclude from version control
-├── eslint.config.js       # Linter configuration
-└── README.md              # Project documentation
+## **Project Structure**
+```
+├── public/                # Static assets (banners, favicons)  
+├── src/  
+│   ├── assets/            # Icons, images, and reusable data  
+│   ├── components/        # Reusable UI components (Navbar, Footer, etc.)  
+│   ├── pages/             # App pages (Home, Login, Player)  
+│   ├── App.jsx            # Main application file  
+│   ├── main.jsx           # Entry point for the app  
+│   └── App.css            # Global styling  
+├── package.json           # Project dependencies and scripts  
+├── vite.config.js         # Vite configuration  
+├── .gitignore             # Files to exclude from version control  
+├── eslint.config.js       # Linter configuration  
+└── README.md              # Project documentation  
+```
 ## **Installation and Usage**
 
 ### **1. Clone the Repository**
@@ -53,9 +56,10 @@ Open your browser and navigate to http://localhost:5173/ to view the application
 
 Screenshots
 
+![Product Preview](public/preview.png)
+
 	•	Homepage with Carousel
 	•	Sign-up and Sign-in Pages
-(Add screenshots here if available)
 
 Technologies Used
 
