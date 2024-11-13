@@ -1,6 +1,7 @@
 .title-cards{
     margin-top: 50px;
-    margin-bottom: 30px; 
+    margin-bottom: 5px; 
+    overflow-y: scroll; /* Let the image scale without cutting */
 }
 .title-cards h2{
     margin-bottom: 8px;
@@ -8,22 +9,76 @@
 .card-list{
     display: flex;
     gap: 10px;
-    overflow-x: scroll;
+    overflow-x: scroll; /* Horizontal scrolling within the container */
+    overflow-y: visible; 
 }
 .card-list::-webkit-scrollbar{
     display: none;
-    display: none;
 }
 .card-list img{
-    width: 240px;
+    width: 240px; /* Default width for larger screens */
     border-radius: 4px;
     cursor: pointer;
 }
+
 .card-list .card{
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible; /* Let the image scale without cutting */
 }
+
+.card-list .card:hover{
+    position: relative;
+    transform: scale(1.2); /* Zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    z-index: 10; /* Ensure hovered element appears above everything */
+}
+
 .card-list .card p{
     position: absolute;
-    bottom: -5px;
-    right: 12px;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #fff;
+    text-align: right;
+    font-size: 14px;
+    width: 180px;   
+}
+
+@media (max-width: 1024px) and (min-width: 375px) {
+    .title-cards{
+        margin-top: clamp(5px, 1vw, 50px);
+    }
+    .title-cards h2{
+        font-size: clamp(12px, 2vw, 24px);
+    }
+    .card-list img {
+        width: clamp(180px, 24vw, 240px);
+        border-radius: clamp(2px, 0.4vw, 4px);
+    }
+    .card-list{
+        gap: clamp(2px, 0.1vw, 10px);
+    }
+    .card-list .card p{
+        font-size: clamp(12px, 1vw, 14px);
+    }
+}
+
+@media (max-width: 375px) {
+    .title-cards{
+        margin-top: 5;
+    }
+    .title-cards h2{
+        font-size: 12px;
+    }
+    .card-list img {
+        width: 180px; /* Minimum width for smaller screens */
+        border-radius: 2px;
+    }
+    .card-list{
+        gap: 2px;
+    }
+    .card-list .card p{
+        font-size: 12px;
+    }
 }

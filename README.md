@@ -15,7 +15,6 @@ A responsive Netflix Clone built with **ReactJS**. This project replicates the N
   Contains preloaded images, icons, and data for a seamless user experience.
 
 ## **Project Structure**
-## **Project Structure**
 ```
 ├── public/                # Static assets (banners, favicons)  
 ├── src/  
