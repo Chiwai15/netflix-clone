@@ -18,7 +18,7 @@ const Player = (movie_id) => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer ${process.env.TMDB_API_ACCESS_TOKEN}'
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`
     }
   };
 

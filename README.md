@@ -72,3 +72,8 @@ Future Improvements
 	•	🎥 Add a video player for streaming content.
 	•	🛠️ Implement backend services for real-time authentication.
 	•	🌐 Deploy to a live environment.
+
+
+dev
+https://www.youtube.com/watch?v=YQQD67N5pi0
+https://www.youtube.com/watch?v=pbGA-B_SCVk

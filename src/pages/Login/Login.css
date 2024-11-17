@@ -74,7 +74,13 @@
     font-weight: 500;
     margin-top: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
 }
+
+.login-form button:hover{
+    transform: scale(1.02); /* Scale the button to 1.1x size on hover */
+}
+
 .form-help{
     display: flex;
     align-items: center;

@@ -9,7 +9,8 @@ import trailer from '../../assets/the_protector_trailer.mp4'
 import TitleCards from '../../components/TitleCards/TitleCards'
 import Footer from '../../components/Footer/Footer'
 import TrailerBanner from '../../components/TrailerBanner/TrailerBanner'
-import Modal from '../../components/PreviewModal/PreviewModal';
+import PreviewModal from '../../components/PreviewModal/PreviewModal';
+import top_10_img from '../../assets/top_10.svg'
 
 const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -27,34 +28,51 @@ const Home = () => {
             trailer={trailer}
           />
         </div>    
-        <div className="hero-caption">
-          <img src={hero_title} alt="" className='caption-img'/>
-          <p>Discovering his ties to a secret ancient order, a young
-          man living in modern Istanbul embarks on a quest to save the
-          city from an immortal enemy.</p>
-          <div className="hero-btns">
-            <button className='btn'><img src={play_icon} alt="" />Play</button>
-            <button className='btn dark-btn' onClick={openModal}><img src={info_icon} alt="" onClick={openModal}/>More Info</button>
-            <Modal
-              isOpen={isModalOpen}
-              onClose={closeModal}
-              imageSrc="https://via.placeholder.com/500x300"
-              title="Sample Modal"
-            >
-              This is a modal content. You can add any description here.
-            </Modal>
-          </div>
+        <div className="info-container">
+            <div className="caption">
+              <img src={hero_title} alt="" className='caption-img'/>
+              <div className="ranking-caption">
+                <img src={top_10_img} alt="" className='top-10-img' />
+                <p>#5 in Movies Today</p>
+              </div>
+              
+              <p>Discovering his ties to a secret ancient order, a young
+              man living in modern Istanbul embarks on a quest to save the
+              city from an immortal enemy.</p>
+              <div className="hero-btns">
+                <button className='btn'><img src={play_icon} alt="" />Play</button>
+                <button 
+                  className='btn dark-btn' 
+                  onClick={openModal}
+                >
+                  <img 
+                    src={info_icon} 
+                    alt="" 
+                    onClick={openModal} 
+                    style={{
+                      transform: 'scale(1.3)',
+                    }}/>
+                    More Info
+                </button>
+                <PreviewModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  imageSrc="https://via.placeholder.com/500x300"
+                  title="Sample Modal"
+                />
+              </div>
+            </div>
         </div>
         
       </div>
       <div className="more-cards">
-      <TitleCards title={"Popular on Netflix"} category={"popular"}/>
-      <TitleCards title={"Trending"} category={"trending"}/>
-      <TitleCards title={"Blockbuster Movies"} category={"top_rated"}/>
-      <TitleCards title={"Upcoming"} category={"upcoming"}/>
-      <TitleCards title={"Top Picks for You"} category={"now_playing"}/>
-      <Footer/>
+        <TitleCards title={"Popular on Netflix"} category={"popular"}/>
+        <TitleCards title={"Trending"} category={"trending"}/>
+        <TitleCards title={"Blockbuster Movies"} category={"top_rated"}/>
+        <TitleCards title={"Upcoming"} category={"upcoming"}/>
+        <TitleCards title={"Top Picks for You"} category={"now_playing"}/>
       </div>
+      <Footer/>
     </div>
   )
 }

@@ -5,14 +5,18 @@ import { toast } from 'react-toastify';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALXz8CJgaI18O-K0Fdi-WFeS7vg6QCJQs",
-  authDomain: "netflix-clone-a9c3c.firebaseapp.com",
-  projectId: "netflix-clone-a9c3c",
-  storageBucket: "netflix-clone-a9c3c.firebasestorage.app",
-  messagingSenderId: "215375078044",
-  appId: "1:215375078044:web:91d6c219061b63bc1d0359",
-  measurementId: "G-RT02X6QXJ8"
+  apiKey: `${import.meta.env.VITE_FIREBASE_API_KEY}`,
+  authDomain: `${import.meta.env.VITE_FIREBASE_AUTH_DOMAIN}`,
+  projectId: `${import.meta.env.VITE_FIREBASE_PROJECT_ID}`,
+  storageBucket: `${import.meta.env.VITE_FIREBASE_STORAGE_BUCKET}`,
+  messagingSenderId: `${import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID}`,
+  appId: `${import.meta.env.VITE_FIREBASE_APP_ID}`,
+  measurementId: `${import.meta.env.VITE_FIREBASE_MEASUREMENT_ID}`
 };
+
+
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -37,6 +41,7 @@ const signup = async (name, email, password) => {
 
 const login = async (email, password) => {
     try {
+        console.log(firebaseConfig);
         const res = await signInWithEmailAndPassword(auth, email, password);
         const user = res.user;
         console.log(JSON.stringify(user)); 
@@ -58,8 +63,8 @@ const login = async (email, password) => {
 }
 
 const logout = () => {
+    console.log("logout");
     signOut(auth);
-
 }
 
 export {auth, db, login, signup, logout};

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
-import {login, signup} from '../../firebase'
+import {login, signup} from '../../utils/firebase'
 import netflix_spinner from '../../assets/netflix_spinner.gif'
 import {useNavigate} from 'react-router-dom'
 import {toast } from 'react-toastify';
@@ -14,6 +14,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const user_auth = async (event) => {

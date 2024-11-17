@@ -11,7 +11,14 @@
     left: 20px;
     width: 50px;
     cursor: pointer;
+    filter: brightness(1); /* Default brightness */
+    transition: filter 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.player img:hover {
+    filter: brightness(0.5); /* Optional to add more effect on hover */
+}
+
 .player iframe{
     border-radius: 10px;
     pointer-events: none;

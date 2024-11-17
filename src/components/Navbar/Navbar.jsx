@@ -6,14 +6,16 @@ import bell_icon from '../../assets/bell_icon.svg'
 import caret_icon from '../../assets/caret_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import search_icon from '../../assets/search_icon.svg'
-import { logout } from '../../firebase'
+import { login, logout } from '../../utils/firebase'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
   const navRef = useRef();
   const navigate = useNavigate();
   const [signState, setSignState] = useState("Sign In")
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(()=>{
     const handleScroll = () => {
@@ -50,15 +52,17 @@ const Navbar = () => {
       
       <div className="navbar-right">
         <img src={search_icon} alt="" className='icons' />
-        <p>Guest</p>
+        <p className='navbar-kids'>Kids</p>
         <img src={bell_icon} alt="" className='icons' />
         <div className="navbar-profile">
-            <img src={profile_img} alt="" className='profile' />
-            <img src={caret_icon} alt="" />
+            <img src={profile_img} alt="" className='profile-img' />
+            <img src={caret_icon} alt="" className='caret-icon'/>
             <div className="dropdown">
-                {/* signState === "Sign In"
-                ? <p onClick={()=>{logout()}}>Sign in on Netflix</p> */}
-                <p onClick={()=>{logout()}}>Sign Out of Netflix</p>
+              {
+                isAuthenticated 
+                ? <p onClick={()=>{logout()}}>Sign Out of Netflix</p>
+                : <p onClick={()=>{navigate('/login')}}>Sign in</p>
+              }
             </div>
         </div>
       </div>

@@ -1,36 +1,63 @@
-.title-cards{
-    margin-top: 50px;
-    margin-bottom: 5px; 
-    overflow-y: scroll; /* Let the image scale without cutting */
+.card-container{
+    /* background-color: #000000; */
+    font-size: 22.624px;
+    display: block;
+    margin: 3vw 0;
+    white-space: nowrap;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+
 }
-.title-cards h2{
-    margin-bottom: 8px;
+
+.card-wrapper {
+    position: relative;
+    overflow-x: visible;
 }
+
+.cards-title{
+    /* background-color: rgb(0, 0, 0); */
+    /* overflow-x: auto; */
+}
+
+.card-container .card-wrapper h2{
+    color: #e5e5e5;
+    display: inline-block;
+    font-size: 1.4vw;
+    font-weight: 500;
+    margin: 0 0 .5em;
+    min-width: 6em;
+    text-decoration: none;
+}
+
+
 .card-list{
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll; /* Horizontal scrolling within the container */
-    overflow-y: visible; 
+    overflow-x: auto;
 }
-.card-list::-webkit-scrollbar{
+
+.ca::-webkit-scrollbar{
     display: none;
 }
-.card-list img{
-    width: 240px; /* Default width for larger screens */
-    border-radius: 4px;
+
+.card-list .card-image{
+    border-radius: 2px;
     cursor: pointer;
 }
 
 .card-list .card{
+    display: inline-block; /* Inline-block for horizontal stacking in block layout, for smoother stacking or constrain scaling */
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: visible; /* Let the image scale without cutting */
+    transition: transform 0.54s ease, box-shadow 0.54s ease;
+    margin-right: 0.75rem;
+    overflow: hidden;
+}
+
+.card-list .card:last-child{
+    margin-right: 20px;
 }
 
 .card-list .card:hover{
-    position: relative;
-    transform: scale(1.2); /* Zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    transform: scale(1.1); /* Zoom effect */
     z-index: 10; /* Ensure hovered element appears above everything */
 }
 
@@ -42,9 +69,65 @@
     color: #fff;
     text-align: right;
     font-size: 14px;
-    width: 180px;   
+    width: 100%;   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
+    font-size: 1vw;
+}
+/* To hide other elements on hover, position hover-details over the card */
+.hover-details {
+    position: absolute; /* Overlay on top of the card */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Start hidden */
+    transform: scale(1.1); /* Start zoomed-out */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    color: white; /* For hover content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
 }
 
+/* Show and scale hover details over the original card */
+.card:hover .hover-details {
+    opacity: 1; /* Make the hover details visible */
+    transform: scale(1.1); /* Cover the card completely */
+    border-radius: 6px 6px 0px 0px;
+}
+
+.hover-details h6, 
+.hover-details p {
+    margin: 5px 0;
+    text-align: center;
+    white-space: wrap;
+    overflow: visible;
+}
+
+.hover-details button {
+    margin-top: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hover-details button:hover {
+    background-color: #f40612; 
+}
+
+
+.hover-content{
+    width: 100%;
+    background-color: white;
+}
+/* 
 @media (max-width: 1024px) and (min-width: 375px) {
     .title-cards{
         margin-top: clamp(5px, 1vw, 50px);
@@ -53,7 +136,7 @@
         font-size: clamp(12px, 2vw, 24px);
     }
     .card-list img {
-        width: clamp(180px, 24vw, 240px);
+        width: clamp(180px, 24vw, 280px);
         border-radius: clamp(2px, 0.4vw, 4px);
     }
     .card-list{
@@ -72,7 +155,7 @@
         font-size: 12px;
     }
     .card-list img {
-        width: 180px; /* Minimum width for smaller screens */
+        width: 180px; 
         border-radius: 2px;
     }
     .card-list{
@@ -80,5 +163,45 @@
     }
     .card-list .card p{
         font-size: 12px;
+    }
+} */
+
+@media (min-width: 1500px) {
+    .container .container-title{
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+
+}
+
+@media (min-width: 1281px) {
+    .card-list .card-image {
+        width: 22vw;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1280px) {
+    .card-list .card-image {
+        width: 22vw;
+    }
+}
+    
+@media (min-width: 500px) and (max-width: 799px) {
+    .card-container .card-wrapper h2{
+        font-size: 12px;
+    }
+    .card-list .card-image {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 499px) {
+    .card-container .card-wrapper h2{
+        font-size: 12px;
+    }
+    .card-list .card-image {
+        width: 30vw;
     }
 }

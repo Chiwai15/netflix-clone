@@ -1,12 +1,15 @@
 .hero{
     position: relative;
     width: 100%;
-
 }
 .trailer-banner{
-    width: 100%;
     mask-image: linear-gradient(to right, transparent, black 75%);
     -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+    background-color: #000;
+    width: 100%;
+    height: 56.25vw;
+    z-index: 0;
+    display: block;
 }
 
 .trailer-banner .banner img{
@@ -17,65 +20,161 @@
     width: 100%;
 }
 
-.hero-caption{
+.info-container{
+    bottom: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 4%;
+    position: absolute;
+    top: 0;
+    width: 36%;
+    z-index: 10;
+    
+}
+.info-container .caption{
     position: absolute;
     width: 100%;
-    padding-left: 6%;
     bottom: 0;
+    pointer-events: none; /* Make it non-interactive (click-through) */
+}
+.info-container .caption-img{
+    width: 100%;
+    margin-bottom: 1.2vw;
+    min-height: 13.2vw;
+    position: relative;
 }
 
-.caption-img{
-    width: 90%;
-    max-width: 420px;
-    margin-bottom: 30px;
+.info-container .caption .ranking-caption{
+  display: flex;
+  align-items: center;
+  margin: 1vw 0;
 }
-.hero-caption p{
-    max-width: 700px;
-    font-size: 17px;
-    margin-bottom: 20px;
+
+.info-container .caption .ranking-caption img{
+    width: 3rem;
+    margin-right: 1rem;
+    
 }
-.hero-btns{
+
+.info-container .caption .ranking-caption p{
     display: flex;
-    gap: 10px;
-    margin-bottom: 50px;
+    justify-content: center;
+    width: auto;
+    color: #fff;
+    font-size: 1.6vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
+    white-space: nowrap;
 }
-.hero-btns .btn img{
-    width: clamp(15px, 2.5vw, 25px);
+
+
+/*     transform-origin: left bottom;
+    transition-duration: 1300ms;
+    transition-delay: 0ms;
+    transform-origin: bottom left;
+    opacity: 1;
+    transition-duration: 600ms;
+    transition-delay: 200ms;
+     */
+.info-container .caption p{
+    color: #fff;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: .1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
+    width: 100%;
 }
-.hero-btns .btn{
+.info-container .hero-btns{
+    display: flex;
+    pointer-events: auto;
+    margin-top: 1.5vw;
+}
+
+.info-container .hero-btns .btn{
     border: 0;
     outline: 0;
-    padding: 8px 20px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    font-weight: 600;
+    
     background: white;
     border-radius: 4px;
     cursor: pointer;
-}
-.hero-btns .btn.dark-btn{
-    color: #fff;
-    background: #6d6d6eb3;
-}
-.hero-btns .btn:hover{
-    color: #fff;
-    background: #ffffffbf;
-}
-.hero-btns .btn.dark-btn:hover{
-    background: #6d6d6eb3;
-}
-.more-cards{
-    padding-left: 6%;
+    
+    display: flex;
+    line-height: 88%;
+    white-space: nowrap;
+    padding: 0.6rem 1.8rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 
-@media (max-width: 1024px){
-    .hero-caption {
+.info-container .hero-btns .btn img{
+    width: clamp(13px, 2.5vw, 25px);
+    height: 2.4rem;
+    width: 2.4rem;
+    margin-right: 0.8rem;
+}
+
+.info-container .hero-btns .btn.dark-btn{
+    color: #fff;
+    background: #6d6d6eb3;
+}
+.info-container .hero-btns .btn:hover{
+    background: #ffffffbf;
+}
+.info-container .hero-btns .btn.dark-btn:hover{
+}
+
+
+.more-cards{
+    margin-top: -24rem;
+}
+
+
+
+@media screen and (min-width: 1500px) {
+    .info-container{
+        left: 0 60px;
+    }
+    .more-cards {
+        padding: 0 60px;
+        margin-top: -24rem;
+    }
+}
+
+
+@media screen and (min-width: 1500px) {
+    .info-container{
+        left: 60px;
+    }
+    .more-cards {
+        padding: 0 60px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .info-container{
+        left: 4%;
+    }
+    .more-cards {
+        padding: 4% 4% 0%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:934px){
+    .more-cards {
+        margin-top: -18rem;
+    }
+}
+
+/* @media (max-width: 1024px){
+    .caption {
         padding-left: 4%;
     }
     .hero-btns{
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
     .caption-img{
         margin-bottom: 10px;
@@ -90,7 +189,7 @@
 }
 
 @media (max-width: 1024px) and (min-width: 500px) {
-    .hero-caption p{
+    .caption p{
         max-width: clamp(500px, 1vw, 700px);
         font-size: clamp(11px, 1.5vw, 15px);
         margin-bottom: 10px;
@@ -103,15 +202,15 @@
         align-items: center;
         gap: clamp(4px, 1vw, 10px);
         font-size: clamp(11px, 1.5vw, 15px);
-        font-weight: clamp(400, 500, 600); /* Proportional scaling for weight */
+        font-weight: clamp(400, 500, 600); 
         background: white;
         border-radius: clamp(2px, 0.5vw, 4px);
         cursor: pointer;
     }
-}
-
+} */
+/* 
 @media (max-width: 500px) {
-    .hero-caption p{
+    .caption p{
         max-width: 500px;
         font-size: 11px;
         margin-bottom: 10px;
@@ -129,4 +228,4 @@
         border-radius: 2px;
         cursor: pointer;
     }
-}
+} */

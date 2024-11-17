@@ -14,9 +14,9 @@
   
   .modal-content {
     background: white;
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    border-radius: 8px;
+    border-radius: 4px 4px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -26,6 +26,8 @@
   .modal-image {
     width: 100%;
     height: auto;
+    border-radius: 4px 4px 0px 0px;
+    border: 0px solid black;
   }
   
   .modal-body {
@@ -48,7 +50,7 @@
   
   /* Zoom-out effect */
   .zoom-out {
-    animation: zoomOut 0.4s ease-in-out;
+    animation: zoomOut 0.4s ease;
   }
   
   @keyframes zoomOut {
@@ -56,6 +58,6 @@
       transform: scale(1);
     }
     to {
-      transform: scale(0.85);
+      transform: scale(1.01);
     }
   }
