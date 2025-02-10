@@ -41,16 +41,19 @@ cd netflix-clone
 ```
 npm install
 ```
-### **3. Setup Environment Variables
+### **3. Setup Environment Variables**
+```
 This project requires environment variables to be configured.  
 Follow these steps to set up your `.env` file:
 
 1. Copy the `.env.example` file to create a new `.env` file:
+
    ```sh
    cp .env.example .env
+   ```
 
 2. Open the .env file and add your API keys and Firebase credentials
-
+```
 ### **4. Start the Development Server**
 ```
 npm run dev
@@ -87,6 +90,6 @@ Future Improvements
 	•	🌐 Deploy to a live environment.
 
 
-dev
+Reference
 https://www.youtube.com/watch?v=YQQD67N5pi0
 https://www.youtube.com/watch?v=pbGA-B_SCVk
