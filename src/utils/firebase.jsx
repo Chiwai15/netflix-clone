@@ -45,15 +45,15 @@ const login = async (email, password) => {
         const res = await signInWithEmailAndPassword(auth, email, password);
         const user = res.user;
         console.log(JSON.stringify(user)); 
-        const docRef = doc(db, "displayName", "nelson");
-        const docSnap = await getDoc(docRef);
+        // const docRef = doc(db, "displayName", "nelson");
+        // const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-        } else {
-        // docSnap.data() will be undefined in this case
-        console.log("No such document!");
-        }
+        // if (docSnap.exists()) {
+        // console.log("Document data:", docSnap.data());
+        // } else {
+        // // docSnap.data() will be undefined in this case
+        // console.log("No such document!");
+        // }
     } catch (error) {
         console.log(error);
         toast.error(error.code.toString().includes("auth/invalid")     

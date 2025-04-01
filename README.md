@@ -3,11 +3,11 @@
 A responsive Netflix Clone built with **ReactJS**. This project replicates the Netflix homepage, complete with a movie carousel, user authentication (sign-up/sign-in), and dynamic layout.
 
 ## **Features**
-- 🎬 **Homepage Layout**:  
+-  **Homepage Layout**:  
   Includes a movie carousel with dynamic title cards.
-- 🔑 **Authentication Pages**:  
+-  **Authentication Pages**:  
   Sign-up and sign-in forms for user management.
-- 🎨 **Custom Components**:  
+-  **Custom Components**:  
   - Navbar
   - Footer
   - Title Cards
@@ -74,6 +74,9 @@ Future Improvements
 	•	🌐 Deploy to a live environment.
 
 
-dev
+### Reference
+```
 https://www.youtube.com/watch?v=YQQD67N5pi0
+https://www.youtube.com/watch?v=XdMBwvrN7jA
 https://www.youtube.com/watch?v=pbGA-B_SCVk
+```
