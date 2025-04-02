@@ -1,6 +1,6 @@
 # **Netflix Clone**
 
-A responsive Netflix Clone built with **ReactJS**. This project replicates the Netflix homepage, complete with a movie carousel, user authentication (sign-up/sign-in), and dynamic layout.
+Built a responsive Netflix homepage clone using ReactJS, integrating the TMDB API for dynamic movie data. Implemented Firebase Authentication for user sign-up/sign-in and managed auth state with Redux. Features include a movie carousel, responsive layout, and secure user session handling.
 
 ## **Demo - Try it**
 https://netflix-clone-production-7fb4.up.railway.app/
@@ -14,7 +14,7 @@ https://netflix-clone-production-7fb4.up.railway.app/
   - Navbar
   - Footer
   - Title Cards
-- 📂 **Assets**:  
+-  **Assets**:  
   Contains preloaded images, icons, and data for a seamless user experience.
 
 ## **Project Structure**
@@ -87,8 +87,8 @@ Technologies Used
 
 Future Improvements
 
-	•	🎥 Add a video player for streaming content.
-	•	🛠️ Implement backend services for real-time authentication.
-	•	🌐 Deploy to a live environment.
+	•	Add a video player for streaming content.
+	•	Implement backend services for real-time authentication.
+	•	Deploy to a live environment.
 
 
