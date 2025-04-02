@@ -89,10 +89,3 @@ Future Improvements
 	•	🌐 Deploy to a live environment.
 
 
-### Reference
-```
-Reference
-https://www.youtube.com/watch?v=YQQD67N5pi0
-https://www.youtube.com/watch?v=XdMBwvrN7jA
-https://www.youtube.com/watch?v=pbGA-B_SCVk
-```

@@ -14,7 +14,8 @@ const TitleCards = ({title, category}) => {
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
-  
+  const retryCount = useRef(0);
+
   function getApiUrl(category) {
     if (category === "trending") {
       return "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
@@ -31,27 +32,15 @@ const TitleCards = ({title, category}) => {
     }
   };
 
-  // useEffect(()=>{
-    
-  //   fetch(getApiUrl(category), options)
-  //     .then(res => res.json())
-  //     .then((res) => {        
-  //       console.log(res)
-  //       const shuffledResults = res.results.sort(() => Math.random() - 0.5);
-  //       setApiData(shuffledResults)
-  //     })
-  //     .catch(err => console.error(err));
-      
-  //   // cardsRef.current.addEventListener('wheel', handleWeel);
-  // }, [])
-
   // Fetch data from the API
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log(options);
         const response = await fetch(getApiUrl(category), options);
         const data = await response.json();
         // const shuffledResults = data.results.sort(() => Math.random() - 0.5);
+        console.log(data.results);
         setApiData(data.results);
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -86,8 +75,7 @@ const TitleCards = ({title, category}) => {
   
     const handleResize = () => {
       setInitialScrollPosition(); // Reapply correct scroll position on resize
-    };
-  
+    };  
     cardsContainer?.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize); // Listen for resize events
   
@@ -96,6 +84,26 @@ const TitleCards = ({title, category}) => {
       window.removeEventListener('resize', handleResize); // Clean up on unmount
     };
   }, [cardsRef]); // Ref dependency, runs again if ref changes
+
+  const handleError = (e) => {
+    const img = e.currentTarget; // capture reference early
+  
+    if (retryCount.current < 2) {
+      retryCount.current += 1;
+  
+      const originalSrc = img.src;
+      img.src = '';
+  
+      setTimeout(() => {
+        if (img) {
+          img.src = originalSrc;
+        }
+      }, 1000);
+    } else {
+      img.onerror = null;
+      img.src = '/fallback.jpg';
+    }
+  };
 
   return (
     <div className="card-container">
@@ -112,11 +120,11 @@ const TitleCards = ({title, category}) => {
             >
               {/* Original Image */}
               <img
-                src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/w500${card.poster_path}`}
                 alt={card.original_title}
                 className="card-image"
               />
-              <p>{card.original_title}</p>
+              <p>{card.title?card.title.length>17?card.title.slice(0,17)+"...":card.title:card.original_name}</p>
 
               {/* Hover Details */}
               {/* {hoveredCard === card.id && (
