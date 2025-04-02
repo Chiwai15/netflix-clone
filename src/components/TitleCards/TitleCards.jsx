@@ -108,7 +108,7 @@ const TitleCards = ({title, category}) => {
   return (
     <div className="card-container">
       <div className='card-wrapper'>
-        <h2 className='card-title'>{title?title:"Popular on Netflix"}</h2>
+        <h2 className='card-list-title'>{title?title:"Popular on Netflix"}</h2>
         <div className="card-list" ref={cardsRef}>
           {apiData.concat(apiData).map((card, index)=>{
             return <Link 
@@ -124,7 +124,7 @@ const TitleCards = ({title, category}) => {
                 alt={card.original_title}
                 className="card-image"
               />
-              <p>{card.title?card.title.length>17?card.title.slice(0,17)+"...":card.title:card.original_name}</p>
+              <p className="card-title">{card.title?card.title.length>31?card.title.slice(0,28)+"...":card.title:card.original_name}</p>
 
               {/* Hover Details */}
               {/* {hoveredCard === card.id && (
