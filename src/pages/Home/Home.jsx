@@ -11,8 +11,11 @@ import Footer from '../../components/Footer/Footer'
 import TrailerBanner from '../../components/TrailerBanner/TrailerBanner'
 import PreviewModal from '../../components/PreviewModal/PreviewModal';
 import top_10_img from '../../assets/top_10.svg'
+import {useNavigate} from 'react-router-dom'
 
 const Home = () => {
+
+  const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
@@ -40,7 +43,7 @@ const Home = () => {
               man living in modern Istanbul embarks on a quest to save the
               city from an immortal enemy.</p>
               <div className="hero-btns">
-                <button className='btn'><img src={play_icon} alt="" />Play</button>
+                <button className='btn' onClick={() => {navigate('/player/45408')}}><img src={play_icon} alt=""/>Play</button>
                 <button 
                   className='btn dark-btn' 
                   onClick={openModal}
@@ -57,8 +60,8 @@ const Home = () => {
                 <PreviewModal
                   isOpen={isModalOpen}
                   onClose={closeModal}
-                  imageSrc="https://via.placeholder.com/500x300"
-                  title="Sample Modal"
+                  imageSrc={preview_banner}
+                  title="🚧 🚧 🚧 Construction 👷‍♂️"
                 />
               </div>
             </div>
