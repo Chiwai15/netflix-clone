@@ -13,9 +13,8 @@
     margin-bottom: -80px;
 }
 
-{
-    /* background-color: rgb(0, 0, 0); */
-    /* overflow-x: auto; */
+.card-wrapper::-webkit-scrollbar{
+    display: none;
 }
 
 .card-container .card-wrapper h2{
