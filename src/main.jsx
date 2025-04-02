@@ -5,7 +5,7 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom' 
 import { Provider } from 'react-redux';
-import store from './redux/store'; // Import the configured store
+import store from './redux/store'; 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
