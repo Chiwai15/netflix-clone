@@ -112,7 +112,7 @@ const TitleCards = ({title, category}) => {
             >
               {/* Original Image */}
               <img
-                src={`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`}
                 alt={card.original_title}
                 className="card-image"
               />
@@ -123,7 +123,7 @@ const TitleCards = ({title, category}) => {
                   <PreviewModal
                     isOpen={true}
                     onClose={closeModal}
-                    imageSrc={`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`}
+                    imageSrc={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`}
                     title="Sample Modal"
                     className="preview-model"
                   />
