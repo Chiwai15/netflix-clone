@@ -60,7 +60,7 @@
 }
 
 .card-list .card:hover{
-    transform: scale(1.2); /* Zoom effect */
+    transform: scale(1.1); /* Zoom effect */
     z-index: 10;
 }
 
