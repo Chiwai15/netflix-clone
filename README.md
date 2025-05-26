@@ -3,7 +3,7 @@
 Built a responsive Netflix homepage clone using ReactJS, integrating the TMDB API for dynamic movie data. Implemented Firebase Authentication for user sign-up/sign-in and managed auth state with Redux. Features include a movie carousel, responsive layout, and secure user session handling.
 
 ## **Demo - Try it**
-https://netflix-clone-wga7.onrender.com/
+https://netflix-clone-omega-silk.vercel.app/
 
 ## **Features**
 -  **Homepage Layout**:  
